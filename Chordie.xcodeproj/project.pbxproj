@@ -11,7 +11,6 @@
 		3B886CE92A192AA6003FD84A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B886CE82A192AA6003FD84A /* ContentView.swift */; };
 		3B886CEB2A192AA6003FD84A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B886CEA2A192AA6003FD84A /* Assets.xcassets */; };
 		3B886CEE2A192AA6003FD84A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B886CED2A192AA6003FD84A /* Preview Assets.xcassets */; };
-		3B886CF72A192BE4003FD84A /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B886CF62A192BE4003FD84A /* Keys.swift */; };
 		3B886CF92A193263003FD84A /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B886CF82A193263003FD84A /* Questions.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,7 +20,6 @@
 		3B886CE82A192AA6003FD84A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3B886CEA2A192AA6003FD84A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B886CED2A192AA6003FD84A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3B886CF62A192BE4003FD84A /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		3B886CF82A193263003FD84A /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,7 +57,6 @@
 				3B886CE82A192AA6003FD84A /* ContentView.swift */,
 				3B886CEA2A192AA6003FD84A /* Assets.xcassets */,
 				3B886CEC2A192AA6003FD84A /* Preview Content */,
-				3B886CF62A192BE4003FD84A /* Keys.swift */,
 				3B886CF82A193263003FD84A /* Questions.swift */,
 			);
 			path = Chordie;
@@ -145,7 +142,6 @@
 			files = (
 				3B886CE92A192AA6003FD84A /* ContentView.swift in Sources */,
 				3B886CF92A193263003FD84A /* Questions.swift in Sources */,
-				3B886CF72A192BE4003FD84A /* Keys.swift in Sources */,
 				3B886CE72A192AA6003FD84A /* ChordieApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
