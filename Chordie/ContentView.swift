@@ -65,7 +65,6 @@ struct ContentView: View {
                         }) {
                             Text("Intervals")
                         }
-                        Spacer()
                         Button(action: {
                             mode = .chord
                             nextQuestion()
