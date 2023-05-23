@@ -7,49 +7,65 @@
 
 import SwiftUI
 
-var iq = intervalQuestions
-
-var getQuestion = iq["C"]?.keys.randomElement()
-var getAnswer = iq["C"]?["D is the 2 of"]! // access answer
-
+struct Question {
+    let question: String
+    let answer: String
+}
 
 struct ContentView: View {
-    @State private var showAnswer = false;
-    
-    
-    struct FlashCard: View {
-        var body: some View {
-            Text(getQuestion!)
-                .font(.title)
-        }
-    }
+    @State var currentQuestion: Question?
+    @State var showAnswer = false
     
     var body: some View {
-        Button {
-            checkAnswer()
-        } label: {
-            FlashCard()
+        VStack {
+            if let question = currentQuestion {
+                Text(question.question)
+                    .font(.title)
+                Button(action: {
+                    self.showAnswer.toggle()
+                }) {
+                    Text(showAnswer ? question.answer : "Show Answer")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                }
+                .padding()
+                Button(action: {
+                    self.nextQuestion()
+                }) {
+                    Text("Next Question")
+                        .font(.title2)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.green)
+                        .cornerRadius(10)
+                }
+            } else {
+                Text("Loading...")
+                    .font(.title)
+            }
         }
-        .frame(width: 200, height: 200)
-        .foregroundColor(.black)
-        .background(Color.mint)
-        .alert("Answer", isPresented: $showAnswer) {
-            Button("Continue", action: askQuestion)
-        } message: {
-            Text("Test")
+        .padding()
+        .onAppear {
+            self.nextQuestion()
         }
-        
     }
     
-    func checkAnswer() {
-        showAnswer = true
-    }
-    
-    func askQuestion() {}
-    
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
+    func nextQuestion() {
+        self.showAnswer = false
+        let keys = Array(intervalQuestions.keys)
+        if let randomKey = keys.randomElement(),
+           let randomQuestion = intervalQuestions[randomKey]?.randomElement() {
+            self.currentQuestion = Question(question: randomQuestion.key, answer: randomQuestion.value)
         }
+    }
+}
+
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
     }
 }
